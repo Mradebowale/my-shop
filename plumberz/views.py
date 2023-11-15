@@ -54,16 +54,16 @@ def booking2(request):
         input_email = request.POST.get("email")
         input_date = request.POST.get("date")
         input_message = request.POST.get("message")
-        input_service = request.POST.get("service")
+        input_type = request.POST.get("service")
 
 
         if len(input_name) > 100:
             messages.error(request, "name is too long")
-            return redirect("contact3")
+            return redirect("booking")
         elif input_name == "":
             messages.error(request, "name cannot be left empty")
             return redirect("booking")
-        elif input_service == "":
+        elif input_type == "":
             messages.error(request, "Please select a service")
             return redirect("booking")
         elif input_date == "":
@@ -76,7 +76,7 @@ def booking2(request):
             messages.error(request, "name is too long")
             return redirect("booking")
         else:
-            Booking.objects.create(name=input_name, email=input_email, date=input_date, message=input_message)
+            Booking.objects.create(name=input_name, email=input_email, date=input_date, message=input_message, type=input_type)
             messages.success(request, "Thank you for contacting us")
             return redirect("home")
     else:

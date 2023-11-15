@@ -172,7 +172,7 @@
                                     <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;" name="email">
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <select name="type" class="form-select border-0" style="height: 55px;">
+                                    <select name="service" class="form-select border-0" style="height: 55px;">
                                         <option selected>Select A Service</option>
                                         <option value="1">Service 1</option>
                                         <option value="2">Service 2</option>
@@ -190,7 +190,7 @@
                                     <textarea name="message" class="form-control border-0" placeholder="Special Request" ></textarea>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Book Now</button>
+                                    <input class="btn btn-primary w-100 py-3" type="submit" value="Book Now">
                                 </div>
                             </div>
                         </form>
@@ -200,26 +200,6 @@
         </div>
     </div>
     <!-- Booking End -->
-
-    <h1>Contact Us</h1>
-        <form action="" method="post">
-            {% csrf_token %}
-            <label for="">Name:</label>
-            <input type="text" name="name">
-            <label for="">Email:</label>
-            <input type="email" name="email" id=""><br>
-            <label for="">type</label>
-            <select name="type" id="">
-                <option value="1">Service 1</option>
-                <option value="2">Service 2</option>
-            </select><br>
-            <label for="">Message: </label>
-            <textarea name="message" id="" cols="30" rows="10"></textarea> <div class="col-12">
-                <textarea name="message" class="form-control border-0" placeholder="Special Request"></textarea>
-            </div>
-            <input type="submit" name="" id="" value="submit">
-        </form>
-    
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
