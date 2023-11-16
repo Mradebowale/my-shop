@@ -43,7 +43,7 @@ def contact(request):
             form.save()
             return redirect('/')
         else:
-            return HttpResponse("Something isn't right")
+            return redirect(request, 'plumberz/404.html')
     else:
         form = contactform1()
     return render(request, 'plumberz/contact.html', {'form': form})
@@ -58,7 +58,7 @@ def booking(request):
             form.save()
             return redirect('booking')
         else:
-            return HttpResponse("Something isn't right")
+            return redirect(request, 'plumberz/404.html')
     else:
         form = bookingForm()
     return render(request, 'plumberz/booking.html', {'form': form})
