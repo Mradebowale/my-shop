@@ -127,6 +127,24 @@
     </div>
     <!-- Page Header End -->
 
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="">Name:</label>
+        <input type="text" name="name">
+        <label for="">Email:</label>
+        <input type="email" name="email" id=""><br>
+        <label for="">type</label>
+        <select name="service" id="">
+            <option value="1">Service 1</option>
+            <option value="2">Service 2</option>
+            <option value="2">Service 3</option>
+        </select><br>
+        <label for="">Message: </label>
+            <textarea name="message" class="form-control border-0" placeholder="Special Request"></textarea>
+        </div>
+        <input type="submit" name="" id="" value="submit">
+    </form>
+
 
     <!-- 404 Start -->
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">

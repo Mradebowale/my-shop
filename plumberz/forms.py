@@ -1,7 +1,24 @@
 from django import forms
-from .models import Booking
+from .models import contactform, Booking
 
-class bookingform(forms.ModelForm):
+
+SERVICE_TYPE = (
+    ("1", "Service 1"),
+    ("2", "Service 2"),
+    ("3", "Service 3")
+)
+
+
+class contactform1(forms.ModelForm):
+    class Meta:
+        model = contactform
+        fields = "__all__"
+
+
+
+
+class bookingForm(forms.ModelForm):
     class Meta:
         model = Booking
-        fields = ['name', 'email', 'type', 'message', 'date']
+        fields = "__all__"
+    
