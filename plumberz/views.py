@@ -36,7 +36,7 @@ def error(request):
 
 
 
-def contact(request):
+def contact2(request):
     if request.method == 'POST':
         form = contactform1(request.POST)
         if form.is_valid():
@@ -160,38 +160,38 @@ def booking(request):
     # return render(request, 'plumberz/booking.html', {'form': form})
 
 
-# def booking2(request):
-#     if request.method == "POST":
-#         input_name = request.POST.get("name")
-#         input_email = request.POST.get("email")
-#         input_date = request.POST.get("date")
-#         input_message = request.POST.get("message")
-#         input_type = request.POST.get("service")
+def contact(request):
+    if request.method == "POST":
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        date = request.POST.get("date")
+        message = request.POST.get("message")
+        type = request.POST.get("service")
 
 
-#         if len(input_name) > 100:
-#             messages.error(request, "name is too long")
-#             return redirect("booking")
-#         elif input_name == "":
-#             messages.error(request, "name cannot be left empty")
-#             return redirect("booking")
-#         elif input_type == "":
-#             messages.error(request, "Please select a service")
-#             return redirect("booking")
-#         elif input_date == "":
-#             messages.error(request, "type cannot be empty")
-#             return redirect("booking")
-#         elif input_message == "":
-#             messages.error(request, "message is too long")
-#             return redirect("booking")
-#         elif input_email =="":
-#             messages.error(request, "name is too long")
-#             return redirect("booking")
-#         else:
-#             Booking.objects.create(name=input_name, email=input_email, date=input_date, message=input_message, type=input_type)
-#             messages.success(request, "Thank you for contacting us")
-#             Booking.save()
-#             return redirect("home")
-#     else:
-#         return render(request, "plumberz/booking.html")
+        if len(name) > 100:
+            messages.error(request, "name is too long")
+            return redirect("contact")
+        elif name == "":
+            messages.error(request, "name cannot be left empty")
+            return redirect("contact")
+        elif type == "":
+            messages.error(request, "Please select a service")
+            return redirect("contact")
+        elif date == "":
+            messages.error(request, "type cannot be empty")
+            return redirect("contact")
+        elif message == "":
+            messages.error(request, "message is too long")
+            return redirect("contact")
+        elif email =="":
+            messages.error(request, "name is too long")
+            return redirect("contact")
+        else:
+            Booking.objects.create(name=name, email=email, date=date, message=message, type=type)
+            messages.success(request, "Thank you for contacting us")
+            Booking.save()
+            return redirect("home")
+    else:
+        return render(request, "plumberz/contact.html")
 

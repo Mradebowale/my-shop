@@ -26,7 +26,7 @@ class Booking(models.Model):
     email = models.EmailField(help_text="Insert a valid email")
     type = models.CharField(max_length=10, choices= SERVICE_TYPE)
     message = models.TextField(max_length=7000)
-    date = models.CharField()
+    date = models.CharField(max_length=200)
 
 
 
