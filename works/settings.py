@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["plumber.up.railway.app", "127.0.0.1"]
 
 
 # Application definition
@@ -94,11 +94,11 @@ STORAGES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Plumberz DB',
+        'NAME': 'railway',
         'USER': 'postgres',
         'PASSWORD': config('PASSWORD'), 
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'HOST': 'viaduct.proxy.rlwy.net',
+        'PORT': config('PORT'),
     },
 }
 
