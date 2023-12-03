@@ -25,8 +25,8 @@ class Booking(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(help_text="Insert a valid email")
     type = models.CharField(max_length=10, choices= SERVICE_TYPE)
-    message = models.TextField(max_length=7000)
-    date = models.CharField(max_length=200)
+    message = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)
 
 
 
@@ -38,7 +38,7 @@ class Booking(models.Model):
 class New(models.Model):
     Headline = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200)
-    content = models.TextField(max_length= 100000)
+    content = models.TextField()
 
 
     def __str__(self):
@@ -53,7 +53,7 @@ class contactform(models.Model):
     names = models.CharField(max_length=200)
     emails = models.EmailField()
     services = models.CharField(max_length=200)
-    dates = models.CharField(max_length=200)
+    dates = models.DateTimeField(auto_now_add=True)
     messages = models.TextField()
 
     def __str__(self):
